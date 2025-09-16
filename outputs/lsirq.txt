@@ -1,0 +1,43 @@
+ IRQ  TOTAL NAME
+IPI1 171363 Function call interrupts
+  26 163765 GICv2 62 Level xhci-hcd:usb1
+  11 136901 GICv2 30 Level arch_timer
+  16   9795 GICv2 242 Edge platform_mhu_link
+IPI5   5337 IRQ work interrupts
+IPI0   4416 Rescheduling interrupts
+IPI4   3878 Timer broadcast interrupts
+  15   1015 GICv2 241 Edge platform_mhu_link
+  21    509 GICv2 225 Edge ttyAML0
+  33     64 GICv2 228 Edge meson_ir
+  34     36 GICv2 220 Edge gxl-crypto
+  35     36 GICv2 221 Edge gxl-crypto
+  27     13 GICv2 250 Level d0074000.mmc
+  28      2 GICv2 105 Edge c1108680.adc
+   9      0 GICv2 25 Level vgic
+  12      0 GICv2 27 Level kvm guest vtimer
+  17      0 GICv2 169 Level arm-pmu
+  18      0 GICv2 170 Level arm-pmu
+  19      0 GICv2 185 Level arm-pmu
+  20      0 GICv2 186 Level arm-pmu
+  22      0 GICv2 35 Edge meson
+  23      0 GICv2 89 Edge dw_hdmi_top_irq, c883a000.hdmi-tx
+  24      0 GICv2 40 Level end0
+  25      0 GICv2 63 Level c9100000.usb, c9100000.usb
+  29      0 GICv2 41 Level mdio_mux-0.1:08
+  32      0 GICv2 231 Edge c8100100.cec
+  36      0 GICv2 76 Edge vdec
+  37      0 GICv2 64 Edge esparserirq
+  39      0 GICv2 193 Level gpmmu
+  40      0 GICv2 197 Level ppmmu0
+  41      0 GICv2 199 Level ppmmu1
+  42      0 GICv2 201 Level ppmmu2
+  43      0 GICv2 192 Level gp
+  44      0 GICv2 196 Level pp0
+  45      0 GICv2 198 Level pp1
+  46      0 GICv2 200 Level pp2
+  47      0 GICv2 194 Level pp_bcast
+IPI2      0 CPU stop interrupts
+IPI3      0 CPU stop NMIs
+IPI6      0 CPU backtrace interrupts
+IPI7      0 KGDB roundup interrupts
+ Err      0 

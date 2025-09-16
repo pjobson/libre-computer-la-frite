@@ -1,0 +1,54 @@
+Module                  Size  Used by
+nvme_fabrics           32768  0
+nvme_core             163840  1 nvme_fabrics
+algif_aead             12288  0
+cbc                    12288  0
+des_generic            12288  0
+libdes                 20480  1 des_generic
+algif_skcipher         12288  0
+md4                    12288  0
+algif_hash             12288  0
+af_alg                 24576  3 algif_hash,algif_skcipher,algif_aead
+mt7601u               131072  0
+mac80211             1232896  1 mt7601u
+lima                   73728  0
+libarc4                12288  1 mac80211
+crct10dif_ce           12288  1
+snd_soc_meson_gx_sound_card    12288  0
+gpu_sched              57344  1 lima
+meson_vdec             81920  0
+snd_soc_meson_card_utils    12288  1 snd_soc_meson_gx_sound_card
+videobuf2_dma_contig    24576  1 meson_vdec
+v4l2_mem2mem           40960  1 meson_vdec
+videobuf2_memops       16384  1 videobuf2_dma_contig
+binfmt_misc            24576  1
+videobuf2_v4l2         32768  2 meson_vdec,v4l2_mem2mem
+videobuf2_common       69632  5 meson_vdec,videobuf2_dma_contig,videobuf2_v4l2,v4l2_mem2mem,videobuf2_memops
+amlogic_gxl_crypto     24576  0
+meson_rng              12288  0
+dw_hdmi_i2s_audio      12288  0
+videodev              311296  3 meson_vdec,videobuf2_v4l2,v4l2_mem2mem
+crypto_engine          24576  1 amlogic_gxl_crypto
+meson_ir               12288  0
+mc                     73728  4 videodev,videobuf2_v4l2,videobuf2_common,v4l2_mem2mem
+rc_core                61440  2 meson_ir
+snd_soc_meson_t9015    20480  1
+ao_cec                 16384  0
+scpi_hwmon             12288  0
+snd_soc_meson_aiu      36864  3
+drm_shmem_helper       28672  1 lima
+snd_soc_meson_codec_glue    12288  1 snd_soc_meson_aiu
+simplefb               16384  1
+cfg80211             1019904  2 mt7601u,mac80211
+rfkill                 32768  3 cfg80211
+pkcs8_key_parser       12288  0
+fuse                  180224  1
+efi_pstore             12288  0
+pstore                 20480  1 efi_pstore
+dm_mod                167936  0
+ip_tables              28672  0
+x_tables               45056  1 ip_tables
+ipv6                  675840  36
+crc_ccitt              12288  1 ipv6
+autofs4                53248  2
+rtc_meson_vrtc         16384  1

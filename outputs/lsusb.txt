@@ -1,0 +1,3 @@
+Bus 001 Device 003: ID 148f:7601 Ralink Technology, Corp. MT7601U Wireless Adapter
+Bus 001 Device 002: ID 0781:5581 SanDisk Corp. Ultra
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub

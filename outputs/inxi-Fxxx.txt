@@ -1,0 +1,63 @@
+System:
+  Host: volbox Kernel: 6.12.42-gfed5d838bb74 arch: aarch64 bits: 64
+    compiler: N/A Desktop: N/A dm: N/A Distro: Debian GNU/Linux 12 (bookworm)
+Machine:
+  Type: Unknown Mobo: libre- model: aml-s805x-ac serial: <superuser required>
+    UEFI: U-Boot v: 2025.07+ date: 07/01/2025
+CPU:
+  Info: quad core model: N/A variant: cortex-a53 bits: 64 type: MCP
+    smt: <unsupported> arch: ARMv8 rev: 4
+  Speed (MHz): avg: 758 high: 1416 min/max: 100/1416 cores: 1: 100 2: 100
+    3: 1416 4: 1416 bogomips: N/A
+  Features: Use -f option to see features
+Graphics:
+  Device-1: meson-gxl-dw-hdmi driver: meson_dw_hdmi v: N/A bus-ID: N/A
+    chip-ID: amlogic:c883a000 class-ID: hdmi-tx
+  Device-2: meson-gxl-vpu driver: meson_drm v: N/A bus-ID: N/A
+    chip-ID: amlogic:d0100000 class-ID: vpu
+  Device-3: meson-gxl-mali driver: lima v: kernel bus-ID: N/A
+    chip-ID: amlogic:d00c0000 class-ID: gpu
+  Display: server: X.Org v: 1.21.1.11 driver: dri: swrast
+    gpu: meson_dw_hdmi,meson_drm,lima note: X driver n/a
+    display-ID: localhost:10.0 screens: 1
+  Screen-1: 0 s-res: 1920x1080 s-dpi: 96 s-size: 508x285mm (20.00x11.22")
+    s-diag: 582mm (22.93")
+  Monitor-1: eDP res: 1920x1080 hz: 60 dpi: 158
+    size: 309x174mm (12.17x6.85") diag: 355mm (13.96") modes: N/A
+  API: OpenGL v: 4.5 Mesa 22.3.6 renderer: llvmpipe (LLVM 15.0.6 128 bits)
+    direct-render: Yes
+Audio:
+  Device-1: meson-gxl-dw-hdmi driver: meson_dw_hdmi bus-ID: N/A
+    chip-ID: amlogic:c883a000 class-ID: hdmi-tx
+  Device-2: gx-sound-card driver: gx_sound_card bus-ID: N/A
+    chip-ID: amlogic:sound class-ID: sound
+  API: ALSA v: k6.12.42-gfed5d838bb74 status: kernel-api
+Network:
+  Device-1: meson-gxbb-dwmac driver: meson8b_dwmac v: N/A port: N/A
+    bus-ID: N/A chip-ID: amlogic:c9410000 class-ID: ethernet
+  IF: end0 state: down mac: ae:15:89:da:f9:1e
+  Device-2: ethernet-phy-id0181.4400 driver: Meson GXL Internal PHY v: N/A
+    port: N/A bus-ID: N/A chip-ID: ethernet-phy-id0181.4400:consumer
+    class-ID: ethernet-phy
+  Device-3: Ralink MT7601U Wireless Adapter type: USB driver: mt7601u
+    bus-ID: 1-2:3 chip-ID: 148f:7601 class-ID: 0000 serial: 1.0
+  IF: wlxa047d7205e8c state: up mac: a0:47:d7:20:5e:8c
+Drives:
+  Local Storage: total: 14.32 GiB used: 2.66 GiB (18.6%)
+  ID-1: /dev/sda type: USB vendor: SanDisk model: Ultra size: 14.32 GiB
+    type: N/A serial: 4C530001050620121164 rev: 1.00 scheme: MBR
+Partition:
+  ID-1: / size: 14.07 GiB used: 2.65 GiB (18.9%) fs: btrfs dev: /dev/sda2
+  ID-2: /boot/efi size: 254.7 MiB used: 8.3 MiB (3.3%) fs: vfat
+    dev: /dev/sda1
+Swap:
+  ID-1: swap-1 type: file size: 1024 MiB used: 0 KiB (0.0%) priority: -2
+    file: /swapfile
+Sensors:
+  Src: lm-sensors+/sys Message: No sensor data found using /sys/class/hwmon
+    or lm-sensors.
+Info:
+  Processes: 152 Uptime: 26m Memory: 943.6 MiB used: 242.8 MiB (25.7%)
+  Init: systemd v: 252 target: graphical (5) default: graphical Compilers:
+  gcc: 12.2.0 alt: 12 Packages: pm: dpkg pkgs: 602 Shell: Bash v: 5.2.15
+  running-in: sshd (SSH) inxi: 3.3.26
