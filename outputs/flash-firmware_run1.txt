@@ -1,0 +1,54 @@
+./flash-firmware.sh aml-s805x-ac
+--2025-09-15 17:02:02--  https://boot.libre.computer/release/aml-s805x-ac/aml-s805x-ac-boot.bin
+Resolving boot.libre.computer (boot.libre.computer)... 192.53.162.101, 2600:3c00::f03c:93ff:fea1:358c
+Connecting to boot.libre.computer (boot.libre.computer)|192.53.162.101|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1015808 (992K) [application/octet-stream]
+Saving to: ‘/tmp/tmp.FCjLmZARDv’
+
+/tmp/tmp.FCjLmZARDv             100%[======================================================>] 992.00K  2.39MB/s    in 0.4s
+
+2025-09-15 17:02:03 (2.39 MB/s) - ‘/tmp/tmp.FCjLmZARDv’ saved [1015808/1015808]
+
+Using GX Family boot parameters
+ROM: 2.4 Stage: 0.0
+Writing /home/pjobson/Downloads/la-fritte/pyamlboot-gxl/files/aml-s805x-ac/u-boot.bin.usb.bl2 at 0xd9000000...
+[DONE]
+Writing /home/pjobson/Downloads/la-fritte/pyamlboot-gxl/files/usbbl2runpara_ddrinit.bin at 0xd900c000...
+[DONE]
+Running at 0xd9000000...
+[DONE]
+Waiting...
+[DONE]
+ROM: 2.4 Stage: 0.0
+Writing /home/pjobson/Downloads/la-fritte/pyamlboot-gxl/files/aml-s805x-ac/u-boot.bin.usb.bl2 at 0xd9000000...
+[DONE]
+Writing /home/pjobson/Downloads/la-fritte/pyamlboot-gxl/files/usbbl2runpara_runfipimg.bin at 0xd900c000...
+[DONE]
+Writing /home/pjobson/Downloads/la-fritte/pyamlboot-gxl/files/aml-s805x-ac/u-boot.bin.usb.tpl at 0x200c000...
+Traceback (most recent call last):
+  File "/home/pjobson/Downloads/la-fritte/pyamlboot-gxl/./boot.py", line 126, in <module>
+    usb.load_uboot()
+  File "/home/pjobson/Downloads/la-fritte/pyamlboot-gxl/./boot.py", line 88, in load_uboot
+    self.write_file(os.path.join(self.bpath, self.TPL_FILE), self.UBOOT_LOAD, large = 64, fill = True)
+  File "/home/pjobson/Downloads/la-fritte/pyamlboot-gxl/./boot.py", line 62, in write_file
+    self.dev.writeLargeMemory(addr, b, large, fill)
+  File "/home/pjobson/Downloads/la-fritte/pyamlboot-gxl/pyamlboot/pyamlboot.py", line 232, in writeLargeMemory
+    self._writeLargeMemory(address+offset, data[offset:offset+writeLength], \
+  File "/home/pjobson/Downloads/la-fritte/pyamlboot-gxl/pyamlboot/pyamlboot.py", line 213, in _writeLargeMemory
+    ep.write(data[offset:offset+blockLength], 1000)
+  File "/usr/lib/python3/dist-packages/usb/core.py", line 408, in write
+    return self.device.write(self, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/usb/core.py", line 989, in write
+    return fn(
+           ^^^
+  File "/usr/lib/python3/dist-packages/usb/backend/libusb1.py", line 837, in bulk_write
+    return self.__write(self.lib.libusb_bulk_transfer,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/usb/backend/libusb1.py", line 938, in __write
+    _check(retval)
+  File "/usr/lib/python3/dist-packages/usb/backend/libusb1.py", line 602, in _check
+    raise USBTimeoutError(_strerror(ret), ret, _libusb_errno[ret])
+usb.core.USBTimeoutError: [Errno 110] Operation timed out
+Unable to push firmware updater to board.

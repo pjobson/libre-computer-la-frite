@@ -1,0 +1,86 @@
+Welcome to minicom 2.9
+
+OPTIONS: I18n
+Port /dev/ttyUSB0, 16:56:37
+
+Press CTRL-A Z for help on special keys
+
+GXL:BL1:9ac50e:bb16dc;FEAT:ADFC318C:0;POC:0;RCY:0;USB:0;GXL:BL1:9ac50e:bb16dc;FEAT:ADFC318C:0;POC:0;RCY:0;USB:0;GXL:BL1:9ac50e;
+TE: 10086657
+
+BL2 Built : 15:21:18, Aug 28 2019. gxl g1bf2b53 - luan.yuan@droid15-sz
+
+set vcck to 1120 mv
+set vddee to 1000 mv
+Board ID = 11
+CPU clk: 1200MHz
+BL2 USB
+DDR enable rdbi
+DDR use ext vref
+DQS-corr enabled
+DDR scramble enabled
+DDR4 chl: Rank0 16bit @ 1200MHz
+
+bist_test rank: 0 11 00 22 27 15 3a 12 00 24 27 15 3a 1d 1d 1d 1d 1d 1d 1c 1c 1c 1d 1d 1d 683
+Rank0: 1024MB(auto)-2T-18
+Set ddr ssc: ppm1000-
+Load fip header from USB, src: 0x0000c000, des: 0x01400000, size: 0x00004000, part: 0
+New fip structure!
+Load bl30 from USB, src: 0x00010000, des: 0x013c0000, size: 0x0000d600, part: 0
+Load bl31 from USB, src: 0x00020000, des: 0x05100000, size: 0x0002b400, part: 0
+Load bl33 from USB, src: 0x0004c000, des: 0x01000000, size: 0x00092000, part: 0
+NOTICE:  BL3-1: v1.0(release):53f813e
+NOTICE:  BL3-1: Built : 15:51:23, May 22 2019
+[BL31]: GXL CPU setup!
+NOTICE:  BL3-1: GXL normal boot!
+NOTICE:  BL3-1: BL33 decompress pass
+mpu_config_enable:system pre init ok
+dmc sec lock
+[Image: gxl_v1.1.3390-6ac5299 2019-09-26 14:09:24 luan.yuan@droid15-sz]
+OPS=0x34
+21 0d 34 00 21 b9 eb 2e 64 00 e2 ac 81 a5 51 02
+[13.414063 Inits done]
+secure task start!
+high task start!
+low task start!
+ERROR:   Error initializing runtime service opteed_fast
+
+U-Boot 2020.04+ (Jun 11 2020 - 02:06:49 +0000) Libre Computer AML-S805X-AC
+
+DRAM:  1 GiB
+MMC:   mmc@74000: 0
+Loading Environment from SPI Flash... SF: Detected gd25lq128 with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+*** Warning - bad CRC, using default environment
+
+Card did not respond to voltage select!
+Error: could not access storage.
+In:    serial
+Out:   serial
+Err:   serial
+[BL31]: tee size: 0
+[BL31]: tee size: 0
+Net:   eth0: ethernet@c9410000
+starting USB...
+Bus dwc3@c9000000: Register 2000140 NbrPorts 2
+Starting the controller
+USB XHCI 1.00
+scanning bus dwc3@c9000000 for devices... 1 USB Device(s) found
+       scanning usb for storage devices... 0 Storage Device(s) found
+Hit any key to stop autoboot:  0
+(ROM USB boot)
+## Executing script at 08000000
+SF: Detected gd25lq128 with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+Read new firmware. Reading existing firmware.
+device 0 offset 0x0, size 0xf8000
+SF: 1015808 bytes @ 0x0 Read: OK
+Read existing firmware.
+byte at 0x0000000008080000 (0x71) != byte at 0x0000000013000000 (0x42)
+Total of 0 byte(s) were the same
+Firmware does not match. Erasing existing firmware. Do not power off!
+SF: 1048576 bytes @ 0x0 Erased: OK
+Writing new firmware. Do not power off!
+device 0 offset 0x0, size 0xf8000
+SF: 1015808 bytes @ 0x0 Written: OK
+Erasing old environment.
+SF: 65536 bytes @ 0xff0000 Erased: OK
+Finished writing new firmware. The board can be safely powered off.
