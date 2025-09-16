@@ -1,0 +1,132 @@
+volbox
+    description: Computer
+    product: Libre Computer AML-S805X-AC
+    vendor: libre-computer
+    width: 64 bits
+    capabilities: smbios-3.7.0 dmi-3.7.0 smp cp15_barrier setend swp tagged_addr_disabled
+    configuration: boot=normal
+  *-core
+       description: Motherboard
+       product: aml-s805x-ac
+       vendor: libre-computer
+       physical id: 0
+     *-firmware
+          description: BIOS
+          vendor: U-Boot
+          physical id: 0
+          version: 2025.07+
+          date: 07/01/2025
+          size: 1MiB
+          capabilities: pci upgrade bootselect uefi
+     *-cpu:0 DISABLED
+          description: CPU [empty]
+          vendor: ARM Limited
+          physical id: 4
+     *-cpu:1
+          description: CPU
+          product: cpu
+          physical id: 1
+          bus info: cpu@0
+          size: 1416MHz
+          capacity: 1416MHz
+          capabilities: fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid cpufreq
+     *-cpu:2
+          description: CPU
+          product: cpu
+          physical id: 2
+          bus info: cpu@1
+          size: 1416MHz
+          capacity: 1416MHz
+          capabilities: fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid cpufreq
+     *-cpu:3
+          description: CPU
+          product: cpu
+          physical id: 3
+          bus info: cpu@2
+          size: 1416MHz
+          capacity: 1416MHz
+          capabilities: fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid cpufreq
+     *-cpu:4
+          description: CPU
+          product: cpu
+          physical id: 5
+          bus info: cpu@3
+          size: 1416MHz
+          capacity: 1416MHz
+          capabilities: fp asimd evtstrm aes pmull sha1 sha2 crc32 cpuid cpufreq
+     *-cpu:5 DISABLED
+          description: CPU
+          product: l2-cache0
+          physical id: 6
+          bus info: cpu@4
+     *-memory
+          description: System memory
+          physical id: 7
+          size: 943MiB
+  *-usbhost
+       product: xHCI Host Controller
+       vendor: Linux 6.12.42-gfed5d838bb74 xhci-hcd
+       physical id: 1
+       bus info: usb@1
+       logical name: usb1
+       version: 6.12
+       capabilities: usb-2.00
+       configuration: driver=hub slots=2 speed=480Mbit/s
+     *-usb:0
+          description: Mass storage device
+          product: Ultra
+          vendor: SanDisk
+          physical id: 1
+          bus info: usb@1:1
+          version: 1.00
+          serial: 4C530001050620121164
+          capabilities: usb-2.10 scsi
+          configuration: driver=usb-storage maxpower=224mA speed=480Mbit/s
+     *-usb:1
+          description: Generic USB device
+          product: 802.11 n WLAN
+          vendor: Ralink Technology, Corp.
+          physical id: 2
+          bus info: usb@1:2
+          version: 0.00
+          serial: 1.0
+          capabilities: usb-2.01
+          configuration: driver=mt7601u maxpower=160mA speed=480Mbit/s
+  *-mmc0
+       description: MMC Host
+       physical id: 2
+       logical name: mmc0
+  *-sound
+       description: LIBRETECHAC
+       physical id: 3
+       logical name: card0
+       logical name: /dev/snd/controlC0
+       logical name: /dev/snd/pcmC0D0p
+  *-graphics
+       product: simple
+       physical id: 4
+       logical name: /dev/fb0
+       capabilities: fb
+       configuration: depth=32 resolution=720,576
+  *-input
+       product: meson-ir
+       physical id: 5
+       logical name: input0
+       logical name: /dev/input/event0
+       capabilities: platform
+  *-network:0
+       description: Ethernet interface
+       physical id: 6
+       logical name: end0
+       serial: ae:15:89:da:f9:1e
+       capacity: 100Mbit/s
+       capabilities: ethernet physical tp mii 10bt 10bt-fd 100bt 100bt-fd autonegotiation
+       configuration: autonegotiation=on broadcast=yes driver=st_gmac driverversion=6.12.42-gfed5d838bb74 link=no multicast=yes port=twisted pair
+  *-network:1
+       description: Ethernet interface
+       physical id: 7
+       bus info: usb@1:2
+       logical name: wlxa047d7205e8c
+       serial: a0:47:d7:20:5e:8c
+       capabilities: ethernet physical
+       configuration: broadcast=yes driver=mt7601u driverversion=6.12.42-gfed5d838bb74 firmware=N/A ip=10.10.10.215 link=yes multicast=yes
