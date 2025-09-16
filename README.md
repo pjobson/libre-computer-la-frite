@@ -32,11 +32,17 @@ The unit's hardware consists of:
 * [Meson IR Receiver](https://github.com/CoreELEC/remotes)
 * 100 Mb Ethernet
 * HDMI 2.0 with 1080P HDR Support
+* 20-Pin Raspberry Pi compatible GPIO
 
-Outputs
+Outputs (collected from a Debian install):
 
-* [lscpu](...)
+* [lscpu](outputs/lscpu.txt)
 * [lshw](outputs/lshw.txt)
+* [lsirq](outputs/lsirq.txt)
+* [lsmod](outputs/lsmod.txt)
+* [lsusb](outputs/lsusb.txt)
+* [dmidecode](outputs/dmidecode.txt)
+* [inxi-Fxxx](outputs/inxi-Fxxx.txt)
 
 ## Required Hardware
 

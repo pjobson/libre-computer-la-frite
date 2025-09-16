@@ -128,19 +128,19 @@ Per the [debian docs use IWCtl](https://wiki.debian.org/WiFi/HowToUse#IWCtl).
     systemctl --now enable iwd.service
     systemctl status iwd.service
 
-#### Enable Network Configuration
+### Enable Network Configuration
 
     sed -i 's/#EnableNetworkConfiguration/EnableNetworkConfiguration/' /etc/iwd/main.conf
 
-#### Optionally Enable IPv6
+### Optionally Enable IPv6
 
     sed -i 's/#EnableIPv6/EnableIPv6/' /etc/iwd/main.conf
 
-#### Restart iwd
+### Restart iwd
 
     systemctl restart iwd.service
 
-#### Configure with `iwctl`
+### Configure with `iwctl`
 
 Change to your user which you hopefully added above.
 
