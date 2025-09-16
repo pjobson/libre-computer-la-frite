@@ -15,7 +15,7 @@ You'll need this on your host linux machine.
 
 Disconnect all cables and devices and open two terminals.
 
-### Terminal One
+## Terminal One
 
 The `ttyUSB0` is pretty normal, if you're doing something special it may be a different one.
 
@@ -36,7 +36,9 @@ It should show:
     
     Press CTRL-A Z for help on special keys
 
-### U-Booting
+## U-Booting
+
+With the Serial to USB 
 
 Hold the UBOOT button which is opposite to the 20-pin header.
 

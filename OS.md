@@ -37,6 +37,16 @@ If you're using `minicom` you can hit escape to bring up the boot menu or you ca
 
 ...
 
+### USB to USB
+
+The instructions show use USB-A to USB-A, I used USB-A to USB-C instead.
+
+USB-A plugs into the port closest to the 20-pin header.
+
+USB-C plugs into your PC.
+
+
+
 ## Timezone
 
 Set your timezone so you can update properly. I think the default is something like `UTC/etc`.
@@ -85,14 +95,13 @@ Add a non-root user for yourself and add you to the sudo group.
         openssh-client openssh-server \
         git git-filter-repo           \
         python3-pip                   \
-        bc
+        bc                            \
+        lshw
 
 Generate your ssh keys.
 
     su - pjobson
     ssh-keygen
-
-
 
 ## Wireless Config
 
