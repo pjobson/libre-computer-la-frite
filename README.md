@@ -5,9 +5,9 @@
 * [General](#general)
 * [Required Hardware](#required-hardware)
 * [Serial to USB / UART](#serial-to-usb--uart)
-* [UBOOT Upgrade](https://github.com/pjobson/libre-computer-la-frite/blob/main/UBOOT.md)
+* [UBOOT Upgrade](#uboot-upgrade)
 * [Upgrade Firmware](#upgrade-firmware)
-* [OS Install](https://github.com/pjobson/libre-computer-la-frite/blob/main/OS.md)
+* [OS Install](#os-install)
 
 ## General
 
@@ -34,7 +34,7 @@ The unit's hardware consists of:
 * HDMI 2.0 with 1080P HDR Support
 * 20-Pin Raspberry Pi compatible GPIO
 
-Outputs (collected from a Debian install):
+Device Information (collected from a Debian install):
 
 * [lscpu](outputs/lscpu.txt)
 * [lshw](outputs/lshw.txt)
@@ -48,34 +48,14 @@ Outputs (collected from a Debian install):
 
 * [La Frite SBC](https://www.loverpi.com/products/libre-computer-board-aml-s805x-ac)
 * USB Stick and/or [eMMC Modul](https://www.loverpi.com/products/libre-computer-board-emmc-5-x-module)
+* A Linux PC or Laptop with the internets
 * Serial to USB Cable / UART Cable
 * USB-A to USB-C Cable OR USB-A to USB-A Cable
-* Micro USB Power Adapter
+* Micro USB w/ Power Supply 5V 2.5A
 
 ## Serial to USB / UART
 
-You can interact with the device over serial instead of using the HDMI with a keyboard and mouse. This is necessary for flashing this unit.
-
-Get your Serial to USB cable and connect to the 20-pin header.
-
-           ┏━━━ Ground
-           ┃
-           ▼
-       • • • • • • • • • • • • • • • • • • • •
-       • • • • • • • • • • • • • • • • • • • •
-         ▲ ▲
-      U  ┃ ┃
-      S  ┃ ┗━━━ RX
-      B  ┗━━━━━ TX 
-
-Cables vary, I'm using a [USB to TTL 4-pin Wire](https://www.pishop.us/product/usb-to-ttl-4-pin-wire/) from Pi Shop. Colors are:
-
-* Red - VCC (5V) - Not Used
-* Black - GND
-* Green - TX
-* White - RX
-
-Plug the USB into your PC.
+[UART.md](https://github.com/pjobson/libre-computer-la-frite/blob/main/UART.md)
 
 ## UBOOT Upgrade
 
@@ -83,32 +63,7 @@ Plug the USB into your PC.
 
 ## Upgrade Firmware
 
-After you do your UBOOT upgrade, you can flash new firmware.
-
-* Connect to Ethernet
-* Hook-up your Serial to USB
-* Start Up minicom
-* Hold the ESC key
-* Power up the device
-
-This will load:
-
-      *** Main Menu ***
-    
-          Boot
-          Select Boot
-          UEFI Config
-          EtherealOS
-          USB eMMC Mode
-          USB DFU Mode
-          Firmware Update
-          Console
-          Reboot
-          Shutdown
-    
-    Press UP/DOWN to move, ENTER to select, ESC to quit
-
-Select `Firmware Update`, this should automatically connect to Libre Computer and upgrade your device's firmware.
+[UpgradeFirmware.md](https://github.com/pjobson/libre-computer-la-frite/blob/main/UpgradeFirmware.md)
 
 ## OS Install
 
