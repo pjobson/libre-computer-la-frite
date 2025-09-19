@@ -4,17 +4,17 @@ You can interact with the device over serial instead of using the HDMI with a ke
 
 ## Cable Connection
 
-Get your Serial to USB cable and connect to the 20-pin header.
+Get your Serial to USB cable and connect to the 40-pin header.
 
            ┏━━━ Ground
            ┃
            ▼
-       • • • • • • • • • • • • • • • • • • • •
-       • • • • • • • • • • • • • • • • • • • •
-         ▲ ▲                                   H
-      U  ┃ ┃                                   D
-      S  ┃ ┗━━━ RX                             M
-      B  ┗━━━━━ TX                             I
+       • • • • • • • • • • • • • ~ • • • • • • •
+       • • • • • • • • • • • • • ~ • • • • • • •
+         ▲ ▲                                    H
+      U  ┃ ┃                                    D
+      S  ┃ ┗━━━ RX                              M
+      B  ┗━━━━━ TX                              I
 
 Cables vary, I'm using a [USB to TTL 4-pin Wire](https://www.pishop.us/product/usb-to-ttl-4-pin-wire/) from Pi Shop. Colors are:
 
