@@ -263,8 +263,7 @@ Connman configuration can be manually edited in: `/var/lib/connman`
 
 If your router provides dns you can use that or `8.8.8.8` or whatever you want.
 
-    resolvectl dns wlan0 10.10.10.1
-    resolvectl dns eth0 10.10.10.1
+    echo "DNS=10.10.10.1" >> /etc/systemd/resolved.conf
     systemctl restart systemd-resolved.service
 
 ### Test It
