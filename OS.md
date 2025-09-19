@@ -181,6 +181,9 @@ Add a non-root user for yourself and add you to the sudo group.
 
     su - pjobson
     ssh-keygen
+    touch ~/.ssh/authorized_keys
+    chmod 600 ~/.ssh/authorized_keys
+    # add any keys here
 
 ### Optional: Install a Local Python `venv`
 
