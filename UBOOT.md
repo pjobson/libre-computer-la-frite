@@ -21,7 +21,7 @@ Follow the directions in [UART.md](https://github.com/pjobson/libre-computer-la-
 
 ## U-Booting
 
-Hold the UBOOT button which is opposite to the 20-pin header.
+Hold the UBOOT button which is opposite to the 40-pin header.
 
 Power up the unit with the MicroUSB Power Adapter.
 
