@@ -184,12 +184,14 @@ Add a non-root user for yourself and add you to the sudo group.
 
 ### Optional: Install a Local Python `venv`
 
+    su - pjobson
     python3 -m venv venv
     echo "export PATH=~/venv/bin:\$PATH" >> .bashrc
     source .bashrc
 
 ### Optional: Install Node.js
 
+    su - pjobson
     curl -L https://bit.ly/n-install | bash
     source .bashrc
 
