@@ -8,7 +8,7 @@
 * [UBOOT Upgrade](#uboot-upgrade)
 * [Upgrade Firmware](#upgrade-firmware)
 * [OS Install](#os-install)
-* [OpenHab](#openhab)
+* [openHAB](#openhab)
 
 ## General
 
