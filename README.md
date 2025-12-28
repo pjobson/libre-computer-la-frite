@@ -8,6 +8,7 @@
 * [UBOOT Upgrade](#uboot-upgrade)
 * [Upgrade Firmware](#upgrade-firmware)
 * [OS Install](#os-install)
+* [OpenHab](#openhab)
 
 ## General
 
@@ -68,3 +69,7 @@ Device Information (collected from a Debian install):
 ## OS Install
 
 [OS.md](https://github.com/pjobson/libre-computer-la-frite/blob/main/OS.md)
+
+## openHAB
+
+[openHAB.md](https://github.com/pjobson/libre-computer-la-frite/blob/main/openHAB.md)
