@@ -1,6 +1,52 @@
 # Install openHAB
 
-This install is geared toward version 5.1.x
+This install is geared toward version 5.1.x using a Silicon Labs HubZ Smart Home Controller.
+
+## Get Device Info
+
+### Smart Hub Serial
+
+    sudo dmesg | grep usb
+
+Look for these lines and note the serial number.
+
+    [30440.009222] usb 1-2: Product: HubZ Smart Home Controller
+    [30440.013566] usb 1-2: Manufacturer: Silicon Labs
+    [30440.018044] usb 1-2: SerialNumber: 1160015D
+                                          ^
+                                          + - Copy this down
+
+### Device & Vendor ID
+
+    lsusb
+
+Get the Device and Vendor IDs
+
+    Bus 001 Device 005: ID 10c4:8a2a Silicon Labs HubZ Smart Home Controller
+                           ^    ^
+                           |    + - Product ID (idProduct)
+                           + ------ Vendor ID  (idVendor)
+
+### Create udev Rule
+
+    # delete it if it is already there, I had a corrupted one already
+    sudo rm /etc/udev/rules.d/99-husbzb-1.rules
+    sudo vi -w /etc/udev/rules.d/99-husbzb-1.rules
+
+Add this, substituting SERIAL_NUMBER, PRODUCT_ID, and VENDOR_ID.
+
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="VENDOR_ID", ATTRS{idProduct}=="PRODUCT_ID", ATTRS{serial}=="SERIAL_NUMBER", ENV{ID_USB_INTERFACE_NUM}=="00", SYMLINK+="zwave"
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="VENDOR_ID", ATTRS{idProduct}=="PRODUCT_ID", ATTRS{serial}=="SERIAL_NUMBER", ENV{ID_USB_INTERFACE_NUM}=="01", SYMLINK+="zigbee"
+
+In vi you can do find and replace, mine for example:
+
+    :%s/VENDOR_ID/10c4/g
+    :%s/PRODUCT_ID/8a2a/g
+    :%s/SERIAL_NUMBER/1160015D/g
+
+Trigger the rule:
+
+    sudo udevadm trigger
 
 ## Install JDK
 
