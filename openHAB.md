@@ -113,13 +113,15 @@ Full instructions are available [here](https://www.openhab.org/docs/installation
 
     sudo vi /etc/default/openhab
 
-Set EXTRA_JAVA_OPTS
+Set `EXTRA_JAVA_OPTS`
 
     EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/ttyUSB0:/dev/ttyUSB1"
 
 ## Build nrjavaserial
 
-On your host machine, not the libre.
+**!!On your host machine, not the la frite!!**
+
+I don't think this will build properly on the la frite due to some reasons I forgot, it'll build faster on a real computer.
 
     # Install prereqs
     sudo apt install gradle gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu
@@ -133,11 +135,14 @@ On your host machine, not the libre.
     sudo mv lockdev.h  $JAVA_HOME/include/
 
     # build nrjavaserial
+    # Note: I forked the original repo and made updates for the arm build which was broke.
+    #       I submitted a PR, but it is no longer maintained, so I doubt it'll ever be added.
     git clone https://github.com/pjobson/nrjavaserial.git
     cd nrjavaserial
     make arm
 
-    # copy over your jar, your openhab ip will probably be different
+    # copy over your jar to your la frite
+    # your openhab IP will probably be different
     scp /build/tmp/jar/nrjavaserial-5.2.1.jar 10.10.10.125:~/
     ssh 10.10.10.125
     sudo cp /usr/share/openhab/runtime/system/com/neuronrobotics/nrjavaserial/5.2.1.OH1/nrjavaserial-5.2.1.OH1.jar /usr/share/openhab/runtime/system/com/neuronrobotics/nrjavaserial/5.2.1.OH1/nrjavaserial-5.2.1.OH1.jar.old
