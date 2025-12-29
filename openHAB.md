@@ -48,6 +48,15 @@ Trigger the rule:
 
     sudo udevadm trigger
 
+Validate:
+
+    ls -la /dev/zigbee /dev/zwave
+
+Should return something like:
+
+    lrwxrwxrwx 1 root root 7 Dec 31 04:45 /dev/zigbee -> ttyUSB1
+    lrwxrwxrwx 1 root root 7 Dec 31 04:45 /dev/zwave -> ttyUSB0
+
 ## Install JDK
 
 Currently the latest version in apt is 17.x, you need at 21 for 5.1.x.
@@ -94,12 +103,95 @@ Full instructions are available [here](https://www.openhab.org/docs/installation
     sudo apt-mark unhold openhab
     sudo apt-mark unhold openhab-addons
 
+## Give openHAB Access to Lock
+
+    sudo groupadd lock
+    sudo usermod -a -G lock openhab
+    sudo chgrp lock /var/lock
+
+## Set EXTRA_JAVA_OPTS
+
+    sudo vi /etc/default/openhab
+
+Set EXTRA_JAVA_OPTS
+
+    EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/ttyUSB0:/dev/ttyUSB1"
+
+## Build nrjavaserial
+
+On your host machine, not the libre.
+
+    # Install prereqs
+    sudo apt install gradle gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf gcc-aarch64-linux-gnu
+    sudo apt install openjdk-21-jdk-headless openjdk-21-jre-headless
+
+    # add to your ~/.bashrc if you want
+    export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
+
+    # copy over lockdev.h
+    wget https://raw.githubusercontent.com/definesat/lockdev/refs/heads/master/src/lockdev.h
+    sudo mv lockdev.h  $JAVA_HOME/include/
+
+    # build nrjavaserial
+    git clone https://github.com/pjobson/nrjavaserial.git
+    cd nrjavaserial
+    make arm
+
+    # copy over your jar, your openhab ip will probably be different
+    scp /build/tmp/jar/nrjavaserial-5.2.1.jar 10.10.10.125:~/
+    ssh 10.10.10.125
+    sudo cp /usr/share/openhab/runtime/system/com/neuronrobotics/nrjavaserial/5.2.1.OH1/nrjavaserial-5.2.1.OH1.jar /usr/share/openhab/runtime/system/com/neuronrobotics/nrjavaserial/5.2.1.OH1/nrjavaserial-5.2.1.OH1.jar.old
+    sudo mv nrjavaserial-5.2.1.jar /usr/share/openhab/runtime/system/com/neuronrobotics/nrjavaserial/5.2.1.OH1/nrjavaserial-5.2.1.OH1.jar
+
+    # you can restart openhab, I just reboot
+    sudo reboot && exit
+
 ## Open Browser
 
-Navigate to: http://ip_address:8080/
+Navigate to: http://10.10.10.125:8080/
 
 If you don't know your IP, you can use:
 
     ip a
 
+## Setup ZigBee & Z-Wave
 
+Go through the setup and install stuff, whatever you want to do.
+
+You'll need your USB ports from above: `ls -la /dev/zigbee /dev/zwave`
+
+    lrwxrwxrwx 1 root root 7 Dec 31 04:45 /dev/zigbee -> ttyUSB1
+    lrwxrwxrwx 1 root root 7 Dec 31 04:45 /dev/zwave -> ttyUSB0
+
+### Z-Wave
+
+Go into Settings -> Things
+
+Hit the `+` in the bottom right corner.
+
+* Select: Z-Wave Binding
+* Select: Z-Wave Serial Controller
+* Serial Port: (As Specificed Above) /dev/ttyUSB0
+* Default Wakeup Period: 3600
+* Heal Time: 2am
+* Click: Create Thing
+* ...Wait...
+* Should Switch to ONLINE
+
+### ZigBee
+
+Go into Settings -> Things
+
+Hit the `+` in the bottom right corner.
+
+* Select: ZigBee Binding
+* Select: Ember Coordinator
+* Port: (As Specificed Above) /dev/ttyUSB1
+* Flow Control: Software (XOn/XOff)
+* Baud Rate: 57600
+* Power Mode: Boost
+* Transmit Power: Normal
+* Network Size: (whatever you like)
+* Click: Create Thing
+* ...Wait...
+* Should Switch to ONLINE
