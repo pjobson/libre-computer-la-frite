@@ -48,6 +48,7 @@ Device Information (collected from a Debian install):
 
 ## Links
 
+### Reference
 
 * [Libre Computer Hub](https://hub.libre.computer/t/libre-computer-boards-overview-and-resources/2847)
 * [Headers Reference](https://hub.libre.computer/t/gpio-pin-header-maps-and-wiring-tool-for-libre-computer-boards/28)
@@ -55,11 +56,24 @@ Device Information (collected from a Debian install):
 * [Schematics](https://hub.libre.computer/t/libre-computer-board-hardware-schematics-links/36)
 * [Test Reports and Certifications](https://hub.libre.computer/t/libre-computer-board-hardware-certification-links/2832)
 
+### Operating Systems
+
+* [UEFI BIOS](https://hub.libre.computer/t/libre-computer-board-bios-firmware-update-images/3113)
+* [Debian 11 & 12](https://hub.libre.computer/t/debian-12-bookworm-and-11-bullseye-for-libre-computer-boards/230)
+* [Fedora](https://hub.libre.computer/t/fedora-for-libre-computer-boards/3225)
+* [Ubuntu 22.04](https://hub.libre.computer/t/ubuntu-22-04-jammy-lts-for-libre-computer-boards/20)
+* [OpenSUSE](https://hub.libre.computer/t/opensuse-for-libre-computer-boards/3226)
+* [Raspian 11 & 12](https://hub.libre.computer/t/raspbian-12-bookworm-and-11-bullseye-for-libre-computer-boards/82)
+* [Lakka](https://hub.libre.computer/t/lakka-for-libre-computer-boards/231/1)
+* [CoreELEC](https://hub.libre.computer/t/coreelec-for-libre-computer-amlogic-boards/234)
+* [LibreELEC](https://hub.libre.computer/t/libreelec-for-libre-computer-boards/233)
+* [Android 7 & 8 & 9](https://hub.libre.computer/t/android-for-libre-computer-boards/232)
+* [Armbian](https://www.armbian.com/la-frite/)
 
 ## Required Hardware
 
 * [La Frite SBC](https://www.loverpi.com/products/libre-computer-board-aml-s805x-ac)
-* USB Stick and/or [eMMC Modul](https://www.loverpi.com/products/libre-computer-board-emmc-5-x-module)
+* USB Stick and/or [eMMC Module](https://www.loverpi.com/products/libre-computer-board-emmc-5-x-module)
 * A Linux PC or Laptop with the internets
 * Serial to USB Cable / UART Cable
 * USB-A to USB-C Cable OR USB-A to USB-A Cable
