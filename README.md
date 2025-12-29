@@ -3,6 +3,7 @@
 ## TOC
 
 * [General](#general)
+* [Links](#links)
 * [Required Hardware](#required-hardware)
 * [Serial to USB / UART](#serial-to-usb--uart)
 * [UBOOT Upgrade](#uboot-upgrade)
@@ -44,6 +45,16 @@ Device Information (collected from a Debian install):
 * [lsusb](outputs/lsusb.txt)
 * [dmidecode](outputs/dmidecode.txt)
 * [inxi-Fxxx](outputs/inxi-Fxxx.txt)
+
+## Links
+
+
+* [Libre Computer Hub](https://hub.libre.computer/t/libre-computer-boards-overview-and-resources/2847)
+* [Headers Reference](https://hub.libre.computer/t/gpio-pin-header-maps-and-wiring-tool-for-libre-computer-boards/28)
+* [Performance Data](https://hub.libre.computer/t/libre-computer-board-performance-test-and-data/2833)
+* [Schematics](https://hub.libre.computer/t/libre-computer-board-hardware-schematics-links/36)
+* [Test Reports and Certifications](https://hub.libre.computer/t/libre-computer-board-hardware-certification-links/2832)
+
 
 ## Required Hardware
 
