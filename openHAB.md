@@ -117,7 +117,22 @@ Set `EXTRA_JAVA_OPTS`
 
     EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/ttyUSB0:/dev/ttyUSB1"
 
-## Build nrjavaserial
+## Replace nrjavaserial
+
+Two options here: **Use My Pre-Build** or **Build It Yourself**.
+
+I'm including both options, mainly I wanted to document how I built
+it so I don't forget.
+
+### Option 1: Use My Pre-Build
+
+    wget https://github.com/pjobson/libre-computer-la-frite/raw/refs/heads/main/jar/nrjavaserial-5.2.1.jar
+    scp nrjavaserial-5.2.1.jar 10.10.10.125:~/
+    ssh 10.10.10.125
+    sudo cp /usr/share/openhab/runtime/system/com/neuronrobotics/nrjavaserial/5.2.1.OH1/nrjavaserial-5.2.1.OH1.jar /usr/share/openhab/runtime/system/com/neuronrobotics/nrjavaserial/5.2.1.OH1/nrjavaserial-5.2.1.OH1.jar.old
+    sudo mv nrjavaserial-5.2.1.jar /usr/share/openhab/runtime/system/com/neuronrobotics/nrjavaserial/5.2.1.OH1/nrjavaserial-5.2.1.OH1.jar
+
+### Option 2: Build It Yourself
 
 **!!On your host machine, not the la frite!!**
 
