@@ -35,8 +35,8 @@ Get the Device and Vendor IDs
 
 Add this, substituting SERIAL_NUMBER, PRODUCT_ID, and VENDOR_ID.
 
-    SUBSYSTEM=="tty", ATTRS{idVendor}=="VENDOR_ID", ATTRS{idProduct}=="PRODUCT_ID", ATTRS{serial}=="SERIAL_NUMBER", ENV{ID_USB_INTERFACE_NUM}=="00", SYMLINK+="zwave", GROUP="dialout", MODE="0666"
-    SUBSYSTEM=="tty", ATTRS{idVendor}=="VENDOR_ID", ATTRS{idProduct}=="PRODUCT_ID", ATTRS{serial}=="SERIAL_NUMBER", ENV{ID_USB_INTERFACE_NUM}=="01", SYMLINK+="zigbee", GROUP="dialout", MODE="0666"
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="VENDOR_ID", ATTRS{idProduct}=="PRODUCT_ID", ATTRS{serial}=="SERIAL_NUMBER", ENV{ID_USB_INTERFACE_NUM}=="00", SYMLINK+="zwave"
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="VENDOR_ID", ATTRS{idProduct}=="PRODUCT_ID", ATTRS{serial}=="SERIAL_NUMBER", ENV{ID_USB_INTERFACE_NUM}=="01", SYMLINK+="zigbee"
 
 In vi you can do find and replace, mine for example:
 
