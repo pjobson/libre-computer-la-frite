@@ -127,11 +127,7 @@ You can set your hostname to whatever you want.
 
 ## Apt Update / Upgrade
 
-Plug-in your ethernet cable to your internets.
-
-    apt update
-    
-At this point you'll probably get an Invalid Signatures error.
+You'll get an Invalid Signatures error if you just do `apt udate`.
 
     The following signatures were invalid: EXPKEYSIG 2E5FB7FC58C58FFB deb.libre.computer <contact+deb@libre.computer>
 
