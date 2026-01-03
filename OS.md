@@ -145,7 +145,7 @@ This will take like 10 minutes or so.
 
 ### Warnings
 
-You may get these warnings, they can be ignored.
+You may get these warnings.
 
     W: Possible missing firmware /lib/firmware/bnx2/bnx2-rv2p-09ax-6.0.17.fw for built-in driver bnx2
     W: Possible missing firmware /lib/firmware/bnx2/bnx2-rv2p-09-6.0.17.fw for built-in driver bnx2
@@ -158,6 +158,10 @@ You may get these warnings, they can be ignored.
     W: Possible missing firmware /lib/firmware/bnx2x/bnx2x-e2-7.13.21.0.fw for built-in driver bnx2x
     W: Possible missing firmware /lib/firmware/bnx2x/bnx2x-e1h-7.13.21.0.fw for built-in driver bnx2x
     W: Possible missing firmware /lib/firmware/bnx2x/bnx2x-e1-7.13.21.0.fw for built-in driver bnx2x
+
+You can fix them with:
+
+    sudo apt install firmware-bnx2
 
 ## Add User
 
@@ -175,7 +179,7 @@ Add a non-root user for yourself and add you to the sudo group.
         openssh-client openssh-server \
         git git-filter-repo           \
         python3-pip python3-venv      \
-        bc lshw curl
+        bc lshw curl ntp
 
 ### Generate your ssh keys.
 
