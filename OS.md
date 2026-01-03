@@ -88,6 +88,10 @@ This should show one device which is close to the size of your eMMC.
 
 On my laptop it is `sda` or `/dev/sda`.
 
+Unmount it if it got mounted.
+
+    sudo umount /dev/sda*
+
 Then you can use `dd` to copy over the disk image.
 
     sudo dd if=./debian-12-base-arm64+arm64.img of=/dev/sda bs=512
