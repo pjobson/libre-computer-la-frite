@@ -90,7 +90,7 @@ On my laptop it is `sda` or `/dev/sda`.
 
 Unmount it if it got mounted.
 
-    sudo umount /dev/sda*
+    sudo umount -l /dev/sda*
 
 Then you can use `dd` to copy over the disk image.
 
