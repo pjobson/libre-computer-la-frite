@@ -33,7 +33,7 @@ Skip down to the [Booting](#booting) section.
 
 ### EMMC
 
-Boot up using the [UART](https://github.com/pjobson/libre-computer-la-frite/blob/main/UART.md) method boot up to the boot menu holding the escape key after plugging in the unit.
+Boot up using the [UART](https://github.com/pjobson/libre-computer-la-frite/blob/main/UART.md) method.  Load the boot menu holding the escape key after plugging in the unit.
 
       *** Main Menu ***
     
