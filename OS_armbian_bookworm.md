@@ -42,6 +42,10 @@ You can set your hostname to whatever you want.
 
     vi /etc/hostname
 
+## Armbian Config
+
+From here you can mess around with `armbian-config` or do some stuff yourself.
+
 ## Add User
 
 Add a non-root user for yourself and add you to the sudo group.
@@ -144,4 +148,16 @@ Should show your `eth0` and `wlan0` (assuming you set `net.ifnames=0` above) and
 You should be able to reboot and see that your configuration sticks.
 
     ping google.com
+
+## Install X Windows
+
+If you want a GUI, you'll need to install it yourself.
+
+    apt install xfce4 xorg xserver-xorg xinit
+
+I installed xfce4, other lightweight desktop environments include: openbox, icewm, lxqt, mate, tinywm, fluxbox, enlightenment, (many more I'm sure).
+
+I'm using an unpowered Realtek RTS5411 chipset USB hub for keyboard & mouse.
+
+    startx
 
