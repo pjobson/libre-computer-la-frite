@@ -4,7 +4,7 @@ Get an OS image: [https://distro.libre.computer/ci/](https://distro.libre.comput
 
 Select whatever distro and version you want.
 
-You should download images prefixed with `+amd64`.
+You should download images prefixed with `+arm64`.
 
 In this example I'm using `debian-12-base-arm64+arm64.img.xz`.
 
