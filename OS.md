@@ -96,7 +96,7 @@ Then you can use `dd` to copy over the disk image.
 
     sudo dd if=./debian-12-base-arm64+arm64.img of=/dev/sda bs=512
 
-This will take about 5-10 minutes, after it finishes, you can reboot.
+This will take about 5-10 minutes. After it finishes, you can reboot the la frite.
 
 ## Booting
 
