@@ -1,0 +1,33 @@
+                   PassMark PerformanceTest Linux (11.0.1004)
+
+Libre Computer AML-S805X-AC
+Cortex-A53 (aarch64)
+4 cores @ 1416 MHz  |  910 MiB RAM
+Number of Processes: 4  |  Test Iterations: 1  |  Test Duration: Medium
+--------------------------------------------------------------------------------
+CPU Mark:                          448
+  Integer Math                     9377 Million Operations/s
+  Floating Point Math              1299 Million Operations/s
+  Prime Numbers                    2.2 Million Primes/s
+  Sorting                          2243 Thousand Strings/s
+  Encryption                       137 MB/s
+  Compression                      3085 KB/s
+  CPU Single Threaded              197 Million Operations/s
+  Physics                          47.1 Frames/s
+  Extended Instructions (NEON)     184 Million Matrices/s
+
+Memory Mark:                       311
+  Database Operations              88.2 Thousand Operations/s
+  Memory Read Cached               2671 MB/s
+  Memory Read Uncached             1891 MB/s
+  Memory Write                     3096 MB/s
+  Available RAM                    694 Megabytes
+  Memory Latency                   159 Nanoseconds
+  Memory Threaded                  3272 MB/s
+--------------------------------------------------------------------------------
+
+Results submitted: https://www.passmark.com/baselines/V11/display.php?id=511092647098
+
+
+Use ESC or CTRL-C to exit
+A: Run All Tests   C: Run CPU Tests   M: Run Memory Tests   U: Upload Test Results
