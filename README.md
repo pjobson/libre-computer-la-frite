@@ -36,7 +36,7 @@ The unit's hardware consists of:
 * HDMI 2.0 with 1080P HDR Support
 * 20-Pin Raspberry Pi compatible GPIO
 
-Device Information (collected from a Debian install):
+Device Information:
 
 * [lscpu](outputs/lscpu.txt)
 * [lshw](outputs/lshw.txt)
@@ -45,6 +45,7 @@ Device Information (collected from a Debian install):
 * [lsusb](outputs/lsusb.txt)
 * [dmidecode](outputs/dmidecode.txt)
 * [inxi-Fxxx](outputs/inxi-Fxxx.txt)
+* [passmark performance test](outputs/passmark.txt)
 
 ## Links
 
