@@ -153,7 +153,9 @@ You should be able to reboot and see that your configuration sticks.
 
 If you want a GUI, you'll need to install it yourself.
 
-    apt install xfce4 xorg xserver-xorg xinit
+    apt install xfce4 xorg xserver-xorg xinit   \
+                pulseaudio pulseaudio-equalizer \
+                lightdm
 
 I installed xfce4, other lightweight desktop environments include: openbox, icewm, lxqt, mate, tinywm, fluxbox, enlightenment, (many more I'm sure).
 
