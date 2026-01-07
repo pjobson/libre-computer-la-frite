@@ -15,9 +15,9 @@ In this example I'm using `debian-12-base-arm64+arm64.img.xz`.
 
 The La Frite has no internal storage, so you can use a USB stick or EMMC if you bought the module.
 
-## METHODS
+## Methods
 
-### USB Stick
+### Method 1: USB Stick (Not Prefered)
 
 You can use Balena Etcher or if you're adventurous `dd`.
 
@@ -33,7 +33,7 @@ Put the stick into the Le Frite and power on.
 
 Skip down to the [Booting](#booting) section.
 
-### EMMC
+### Method 2: EMMC (Prefered)
 
 Boot up using the [UART](https://github.com/pjobson/libre-computer-la-frite/blob/main/UART.md) method.  Load the boot menu holding the escape key after plugging in the unit.
 
