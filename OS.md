@@ -17,7 +17,9 @@ The La Frite has no internal storage, so you can use a USB stick or EMMC if you 
 
 ## Methods
 
-### Method 1: USB Stick (Not Prefered)
+### Method 1: USB Stick (Easy But Not Prefered)
+
+With this method you'll `dd` the OS to a USB stick and boot with that.  Booting via USB is a bit slow, but if you don't have the EMMC it is the only way (aside from EtherealOS) to use the unit.
 
 You can use Balena Etcher or if you're adventurous `dd`.
 
@@ -34,6 +36,8 @@ Put the stick into the Le Frite and power on.
 Skip down to the [Booting](#booting) section.
 
 ### Method 2: EMMC (Prefered)
+
+This method you'll boot the unit in to USB eMMC Mode, which basically attaches it as a storage device to your host computer.  Then you'll `dd` the OS to the storage device and boot solely off of the La Frite.
 
 Boot up using the [UART](https://github.com/pjobson/libre-computer-la-frite/blob/main/UART.md) method.  Load the boot menu holding the escape key after plugging in the unit.
 
@@ -99,6 +103,34 @@ Then you can use `dd` to copy over the disk image.
     sudo dd if=./debian-12-base-arm64+arm64.img of=/dev/sda bs=512
 
 This will take about 5-10 minutes. After it finishes, you can reboot the la frite.
+
+### Method 3: USB to EMMC (Really Not Prefered)
+
+I'm not sure why you'd want to use this method, but it is an option.  Maybe you lost your serial cable and just want to get up and running using the EMMC instead of a USB stick.
+
+Follow **Method 1** and boot up off of your USB stick, then `wget` whatever operating system image to the USB stick or copy it over from your host PC.
+
+Boot up the La Frite from the USB.
+
+    sudo lsblk
+
+Should return something like..
+
+    NAME         MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+    mtdblock0     31:0    0    16M  0 disk
+    mmcblk1      179:0    0  14.6G  0 disk
+    sda           50:0    0  32.0G  0 disk
+    zram0        251:0    0 455.3M  0 disk [SWAP]
+    zram1        251:1    0    50M  0 disk /var/log
+    zram2        251:2    0     0B  0 disk
+
+Where `sda` is your USB stick, `mmcblk1` is your EMMC.
+
+Then you can can write the image to your EMMC.
+
+   sudo dd if=./debian-12-base-arm64+arm64.img of=/dev/mmcblk1 bs=512 status=progress
+
+Should take 5-10 minutes.  When it is finished, power down the La Frite, remove the USB stick and power back on.  It should boot off of the EMMC now.
 
 ## OS Specific Setup
 
