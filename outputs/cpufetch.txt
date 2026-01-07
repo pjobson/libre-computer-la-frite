@@ -1,0 +1,10 @@
+
+      .#####.             ###                  ###        SoC:                 Amlogic S805X
+     ########             ###                             Technology:          28nm
+    ####..###  ########## ###   ###     #####  ###   ###  Microarchitecture:   Cortex-A53
+  .## #.  ###  ##  ##  ## ### ##   ## ##   ##  ### ##     Max Frequency:       1.416 GHz
+ #### #.# ###  ##  ##  ## ### ##   ## ##   ##  ### ##     Cores:               4 cores
+#########.###  ##  ##  ##  ##   ###    ######   ##   ###  Features:            NEON,SHA1,SHA2,AES,CRC32
+                                          ###             Peak Performance:    45.31 GFLOP/s
+                                       ###
+

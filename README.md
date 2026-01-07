@@ -46,6 +46,7 @@ Device Information:
 * [dmidecode](outputs/dmidecode.txt)
 * [inxi-Fxxx](outputs/inxi-Fxxx.txt)
 * [passmark performance test](outputs/passmark.txt)
+* [cpufetch](outputs/cpufetch.txt)
 
 ## Links
 
