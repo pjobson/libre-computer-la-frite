@@ -155,7 +155,7 @@ If you want a GUI, you'll need to install it yourself.
 
     apt install xfce4 xorg xserver-xorg xinit   \
                 pulseaudio pulseaudio-equalizer \
-                lightdm
+                lightdm xfce4-power-manager
 
 I installed xfce4, other lightweight desktop environments include: openbox, icewm, lxqt, mate, tinywm, fluxbox, enlightenment, (many more I'm sure).
 
@@ -163,3 +163,35 @@ I'm using an unpowered Realtek RTS5411 chipset USB hub for keyboard & mouse.
 
     startx
 
+## Optional: Kiosk Mode
+
+https://wiki.xfce.org/howto/kiosk_mode
+
+### Disable Suspend/Sleep/Hibernate
+
+Only really for special application uses.
+
+    sudo systemctl unmask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+### Disable Screen Saver & Blank
+
+    /usr/bin/xset s noblank
+    /usr/bin/xset s off
+    /usr/bin/xset dpms 0 0 0
+    /usr/bin/xset -dpms
+
+### Disable Power Management
+
+    vi ~/.config/xfce4/xfconf/xfce-perchannel-xml
+
+Make it:
+
+    <?xml version="1.0" encoding="UTF-8"?>
+    <channel name="xfce4-power-manager" version="1.0">
+      <property name="xfce4-power-manager" type="empty">
+        <property name="blank-on-ac" type="int" value="0"/>
+        <property name="dpms-on-ac-sleep" type="uint" value="0"/>
+        <property name="dpms-on-ac-off" type="uint" value="0"/>
+        <property name="dpms-enabled" type="bool" value="false"/>
+      </property>
+    </channel>
