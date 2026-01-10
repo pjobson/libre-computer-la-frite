@@ -15,13 +15,13 @@
 
 The La Frite is a barebones SBC with either 512MB or 1GB of RAM and no built in storage. 
 
-These units can be boot from: 
+### Boot Methods
 
 * EtherealOS
 * eMMC
 * USB
 
-The unit's hardware consists of:
+### Hardware
 
 * 4 Core Cortex-A53 @ 1.416GHz
     * Cryptography Extensions
@@ -36,7 +36,14 @@ The unit's hardware consists of:
 * HDMI 2.0 with 1080P HDR Support
 * 20-Pin Raspberry Pi compatible GPIO
 
-Device Information:
+### Power Consumption
+
+* 4W Full Load
+* 2.5W Typical Load
+* < 0.75W Idle
+* < 0.2 Wake Ready
+
+### Device Information
 
 * [lscpu](outputs/lscpu.txt)
 * [lshw](outputs/lshw.txt)
