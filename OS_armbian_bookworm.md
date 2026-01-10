@@ -163,6 +163,10 @@ I'm using an unpowered Realtek RTS5411 chipset USB hub for keyboard & mouse.
 
     startx
 
+## Optional: Redshift
+
+    apt install redshift-gtk redshift
+
 ## Optional: Kiosk Mode
 
 https://wiki.xfce.org/howto/kiosk_mode
