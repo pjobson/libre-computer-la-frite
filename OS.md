@@ -79,7 +79,7 @@ This should show an `Amlogic` device.
 
 Then list your block devices.
 
-    lslbk
+    lsblk
 
 This should show one device which is close to the size of your eMMC.
 
