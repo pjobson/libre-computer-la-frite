@@ -1,6 +1,9 @@
 # Install An Operating System
 
-Get an OS image: [https://distro.libre.computer/ci/](https://distro.libre.computer/ci/) 
+Get an OS image: 
+
+* Direct - [https://distro.libre.computer/ci/](https://distro.libre.computer/ci/) 
+* Armbian - [https://armbian.com/boards/lafrite](https://armbian.com/boards/lafrite)
 
 This is geared towards installing Debian 12, you can use other OS's at your interest.
 
@@ -22,6 +25,8 @@ The La Frite has no internal storage, so you can use a USB stick or EMMC if you 
 With this method you'll `dd` the OS to a USB stick and boot with that.  Booting via USB is a bit slow, but if you don't have the EMMC it is the only way (aside from EtherealOS) to use the unit.
 
 You can use Balena Etcher or if you're adventurous `dd`.
+
+Insert your stick and...
 
     sudo fdisk -l
 
