@@ -2,27 +2,35 @@
 
 ## Booting
 
-At this point you can hook up the Le Frite to your monitor and keyboard, but if you want to you just use serial with the UART adapter and `minicom` as shown above to monitor the output.
+At this point you can hook up the Le Frite to your monitor and keyboard,
+but if you want to you just use serial with the UART adapter and
+`minicom` as shown above to monitor the output.
 
-If you're using `minicom` you can hit escape to bring up the boot menu or you can just wait and it'll automatically boot off the stick.
+If you're using `minicom` you can hit escape to bring up the boot
+menu or you can just wait and it'll automatically boot off the stick.
 
 ## Login
 
-Armbian will automatically log you in as root and ask you to create a password.
+Armbian will automatically log you in as root and ask you to create
+a password.
 
-Then it'll try to get you to create a new user.  I skipped the user creation by doing `CTRL-C`, so I could do it later.
+Then it'll try to get you to create a new user.  I skipped the user
+creation by doing `CTRL-C`, so I could do it later.
 
-This dropped my to `root`'s bash shell, but echo was disabled, so I just reboot.
+This dropped my to `root`'s bash shell, but echo was disabled, so I
+just reboot.
 
 ## Timezone
 
-Set your timezone so you can update properly, the default is `Etc/UTC` which is `UTC`, but caused me some problems.
+Set your timezone so you can update properly, the default is `Etc/UTC`
+which is `UTC`, but caused me some problems.
 
     dpkg-reconfigure tzdata
 
 ## Update & Upgrade
 
-Regular `apt update` will throw some errors, so use this instead the first time.
+Regular `apt update` will throw some errors, so use this instead the
+first time.
 
     apt-get --allow-releaseinfo-change update
     apt upgrade
@@ -34,7 +42,8 @@ Regular `apt update` will throw some errors, so use this instead the first time.
         openssh-client openssh-server \
         git git-filter-repo           \
         python3-pip python3-venv      \
-        bc lshw curl
+        bc lshw curl \
+        linux-sysctl-defaults
 
 ## Optional Edit Hostname
 
@@ -44,7 +53,8 @@ You can set your hostname to whatever you want.
 
 ## Armbian Config
 
-From here you can mess around with `armbian-config` or do some stuff yourself.
+From here you can mess around with `armbian-config` or do some stuff
+yourself.
 
 ## Add User
 
@@ -90,45 +100,7 @@ You should see it, something like this.
 
 ### Configuration
 
-For wifi we're going to use Connman, because why not.
-
-    apt install connman
-    connmanctl
-
-This should drop you to the connman prompt, note empty items in `services` are networks with hidden SSIDs.
-
-    connmanctl> enable wifi
-    Enabled wifi
-    connmanctl> scan wifi
-    Scan completed for wifi
-    connmanctl> services
-        *AR Wired        ethernet_ae1589daf91e_cable
-      WifiNetwork1   wifi_HASH_KEY_managed_psk
-      WifiNetwork2   wifi_HASH_KEY_managed_psk
-                     wifi_HASH_KEY_hidden_managed_ieee8021x
-      ...
-
-    connmanctl> agent on
-    Agent registered
-    connmanctl> connect wifi_HASH_KEY_managed_psk
-    Agent RequestInput wifi_HASH_KEY_managed_psk
-      Passphrase = [ Type=psk, Requirement=mandatory ]
-    Passphrase? YOUR_PASSPHRASE_HERE
-    connmanctl> [  621.809075] wlan0: authenticate with c0:56:27:b6:13:7a (local address=a0:47:d7:10:5c:b1)
-    [  621.812128] wlan0: send auth to c0:56:27:b6:13:7a (try 1/3)
-    [  621.819235] wlan0: authenticated
-    [  621.823161] wlan0: associate with c0:56:27:b6:13:7a (try 1/3)
-    [  621.845444] wlan0: RX AssocResp from c0:56:27:b6:13:7a (capab=0x431 status=0 aid=8)
-    [  621.894930] wlan0: associated
-    Connected wifi_HASH_KEY_managed_psk
-
-You can setup a Static IP Address and Name Servers at this point if you'd like. The order is: `IP_ADDRESS NET_MASK GATEWAY_IP`
-
-    connmanctl> config wifi_HASH_KEY_managed_psk --ipv4 manual 10.10.10.120 255.255.255.0 10.10.10.1
-    
-    connmanctl> quit
-
-Connman configuration can be manually edited in: `/var/lib/connman`
+Use `armbian-config` to setup your WiFi.
 
 ### Add DNS
 

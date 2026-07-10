@@ -29,13 +29,17 @@ Power up the unit with the MicroUSB Power Adapter.
 
     GXL:BL1:9ac50e:bb16dc;FEAT:ADFC318C:0;POC:0;RCY:0;USB:0;
 
+If this doesn't show up, flip the little switch next to the
+button and try again.  Flip the switch back when you're done.
+
 ### Terminal Two
 
     # You should already be in `libre-computer-la-frite`
     cd pyamlboot-gxl
     ./flash-firmware.sh aml-s805x-ac
 
-This should automatically download `aml-s805x-ac-boot.bin` and attempt to install it.
+This should automatically download `aml-s805x-ac-boot.bin` and attempt
+to install it.
 
 Mine first failed with:
 
@@ -49,7 +53,8 @@ I disconnected the power, pressed the UBOOT button, and powed back up.
     
 This again downloaded the firmware and attempt to flash.
 
-At this point, do not unplug the device, it is still flashing. In Terminal One it should eventually end with.
+At this point, do not unplug the device, it is still flashing. In
+Terminal One it should eventually end with.
 
     Finished writing new firmware. The board can be safely powered off.
 
@@ -58,4 +63,3 @@ Full terminal logs from my system.
 * First flash output: [flash-firmware_run1](https://github.com/pjobson/libre-computer-la-frite/blob/main/outputs/flash-firmware_run1.txt) 
 * Second flash output: [flash-firmware_run2](https://github.com/pjobson/libre-computer-la-frite/blob/main/outputs/flash-firmware_run2.txt)
 * Terminal output: [terminal_output](https://github.com/pjobson/libre-computer-la-frite/blob/main/outputs/terminal_output.txt)
-

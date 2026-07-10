@@ -13,7 +13,8 @@
 
 ## General
 
-The La Frite is a barebones SBC with either 512MB or 1GB of RAM and no built in storage. 
+The La Frite is a barebones SBC with either 512MB or 1GB
+of RAM and no built in storage.
 
 ### Boot Methods
 

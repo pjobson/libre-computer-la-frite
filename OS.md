@@ -5,9 +5,11 @@ Get an OS image:
 * Direct - [https://distro.libre.computer/ci/](https://distro.libre.computer/ci/) 
 * Armbian - [https://armbian.com/boards/lafrite](https://armbian.com/boards/lafrite)
 
-This is geared towards installing Debian 12, you can use other OS's at your interest.
+This is geared towards installing Debian 12, you can use other OS's
+at your interest.
 
-Note: I have found that their Ubuntu Desktop related images are broken, they fail on boot.
+Note: I have found that their Ubuntu Desktop related images are
+broken, they fail on boot.
 
 You should download images prefixed with `+arm64`.
 
@@ -16,13 +18,22 @@ In this example I'm using `debian-12-base-arm64+arm64.img.xz`.
     wget https://distro.libre.computer/ci/debian/12/debian-12-base-arm64%2Barm64.img.xz
     unar debian-12-base-arm64+arm64.img.xz
 
-The La Frite has no internal storage, so you can use a USB stick or EMMC if you bought the module.
+The La Frite has no internal storage, so you can use a USB stick or
+EMMC if you bought the module.
+
+## Note
+
+You should have the device and your laptop setup as described in the
+[UART](https://github.com/pjobson/libre-computer-la-frite/blob/main/UART.md)
+docs.
 
 ## Methods
 
 ### Method 1: USB Stick (Easy But Not Prefered)
 
-With this method you'll `dd` the OS to a USB stick and boot with that.  Booting via USB is a bit slow, but if you don't have the EMMC it is the only way (aside from EtherealOS) to use the unit.
+With this method you'll `dd` the OS to a USB stick and boot with
+that.  Booting via USB is a bit slow, but if you don't have the
+EMMC it is the only way (aside from EtherealOS) to use the unit.
 
 You can use Balena Etcher or if you're adventurous `dd`.
 
@@ -32,19 +43,25 @@ Insert your stick and...
 
 Find your stick's path, mine is: `/dev/sda`.
 
-**Note:** Don't copy and paste sda if your USB stick isn't that path or you could wipe your hard drive.
+**Note:** Don't copy and paste sda if your USB stick isn't that path
+or you could wipe your hard drive.
 
     sudo dd if=./debian-12-base-arm64+arm64.img of=/dev/sda bs=512
 
-Put the stick into the Le Frite and power on.
-
-Skip down to the [Booting](#booting) section.
+Boot the unit up, in the `minicom` terminal, it should boot right
+off the USB stick and prompt you for setup.
 
 ### Method 2: EMMC (Prefered)
 
-This method you'll boot the unit in to USB eMMC Mode, which basically attaches it as a storage device to your host computer.  Then you'll `dd` the OS to the storage device and boot solely off of the La Frite.
+This method you'll boot the unit in to USB eMMC Mode, which basically
+attaches it as a storage device to your host computer.  Then you'll
+`dd` the OS to the storage device and boot solely off of the La Frite.
 
-Boot up using the [UART](https://github.com/pjobson/libre-computer-la-frite/blob/main/UART.md) method.  Load the boot menu holding the escape key after plugging in the unit.
+1. Hook up the unit as described in the [UART](https://github.com/pjobson/libre-computer-la-frite/blob/main/UART.md) method.
+2. If you're using a laptop, be sure it is plugged in, some laptops will try to draw power through the la frite (like my T495).
+3. Connect the USB Type A to USB Type A which came with the EMMC from the port closest to the GPIO and your PC.  You can also use a USB A to USB C cable if you want.
+
+In the `minicom` terminal hold the ESC key after plugging in the unit.
 
       *** Main Menu ***
     
@@ -109,11 +126,18 @@ Then you can use `dd` to copy over the disk image.
 
 This will take about 5-10 minutes. After it finishes, you can reboot the la frite.
 
+NOTE: DO NOT DELETE THE PARTITIONS FROM THE EMMC AND REBOOT OR YOU'LL HAVE PROBLEMS.
+
 ### Method 3: USB to EMMC (Really Not Prefered)
 
-I'm not sure why you'd want to use this method, but it is an option.  Maybe you lost your serial cable and just want to get up and running using the EMMC instead of a USB stick.
+I'm not sure why you'd want to use this method, but it is an option.
+Maybe you lost your serial cable and just want to get up and running
+using the EMMC instead of a USB stick.  Maybe you deleted your EMMC
+partitions and reboot it.
 
-Follow **Method 1** and boot up off of your USB stick, then `wget` whatever operating system image to the USB stick or copy it over from your host PC.
+Follow **Method 1** and boot up off of your USB stick, then `wget`
+whatever operating system image to the USB stick or copy it over
+from your host PC.
 
 Boot up the La Frite from the USB.
 
@@ -135,11 +159,14 @@ Then you can can write the image to your EMMC.
 
    sudo dd if=./debian-12-base-arm64+arm64.img of=/dev/mmcblk1 bs=512 status=progress
 
-Should take 5-10 minutes.  When it is finished, power down the La Frite, remove the USB stick and power back on.  It should boot off of the EMMC now.
+Should take 5-10 minutes.  When it is finished, power down the La
+Frite, remove the USB stick and power back on.  It should boot off
+of the EMMC now.
 
 ## OS Specific Setup
 
-From here your OS should be installed, here's some instructions for OSes I've tried.
+From here your OS should be installed, here's some instructions for
+OSes I've tried.
 
 * [Debian 12](OS_debian.md)
 * [Armbian 25.2.2 (Debian Bookwork)](OS_armbian_bookworm.md)

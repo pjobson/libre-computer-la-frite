@@ -1,6 +1,8 @@
 # Serial to USB / UART
 
-You can interact with the device over serial instead of using the HDMI with a keyboard and mouse. This is necessary for flashing this unit.
+You can interact with the device over serial instead of using the
+HDMI with a keyboard and mouse. This is necessary for flashing
+this unit.
 
 ## Cable Connection
 
@@ -16,7 +18,8 @@ Get your Serial to USB cable and connect to the 40-pin header.
       S  ┃ ┗━━━ RX                              M
       B  ┗━━━━━ TX                              I
 
-Cables vary, I'm using a [USB to TTL 4-pin Wire](https://www.pishop.us/product/usb-to-ttl-4-pin-wire/) from Pi Shop. Colors are:
+Cables vary, I'm using a [USB to TTL 4-pin Wire](https://www.pishop.us/product/usb-to-ttl-4-pin-wire/)
+from Pi Shop. Colors are:
 
 * Red - VCC (5V) - Not Used
 * Black - GND
@@ -51,3 +54,6 @@ If it does connect it'll show:
     Port /dev/ttyUSB0, 16:56:37
 
     Press CTRL-A Z for help on special keys
+
+If you're having trouble may need to add your user to the following
+groups: `tty` | `dialout` | `plugdev`
